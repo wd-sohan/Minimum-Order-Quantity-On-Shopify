@@ -1,0 +1,23 @@
+<!-- Custom Code by Sohan -->
+{% assign productTags = product.tags | join: ', ' %}
+<!--Tag for Min 1-->
+{% if productTags contains 'min1' %}
+<div class="number-input">
+   <div onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="cms-btn"></div>
+   <input type="number" id="Quantity-{{ section.id }}"
+      name="quantity" value="1" min="1" pattern="[0-9]*"
+      class="product-form__input product-form__input--quantity quantity" data-quantity-input readonly="">
+   <div onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus cms-btn"></div>
+</div>
+{% endif %}
+
+<!--Tag for Min 2-->
+{% if productTags contains 'min2' %}
+<div class="number-input">
+   <div onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="cms-btn"></div>
+   <input type="number" id="Quantity-{{ section.id }}"
+      name="quantity" value="2" min="2" pattern="[0-9]*"
+      onKeyDown="return false" class="product-form__input product-form__input--quantity quantity" data-quantity-input readonly="">
+   <div onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus cms-btn"></div>
+</div>
+{% endif %}
