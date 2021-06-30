@@ -1,20 +1,22 @@
+<!-- cart desktop -->
 <!--Tag for Min 1-->
+{% if item.product.tags contains "min1" %}
 <div class="number-input">
-   <div onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="cms-btn"></div>
-   {% if item.product.tags contains "min1" %}
-   <input id="updates_large_{{ item.key }}" class="cart__qty-input quantity" type="number"
-      name="updates[]" value="{{ item.quantity }}" min="1" step="1" pattern="[0-9]*"
-      data-quantity-input data-quantity-item="{{ forloop.index }}" data-quantity-input-desktop data-role="product-quantity-desktop" readonly="">
-   <div onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus cms-btn"></div>
+  <div onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="cms-btn"></div>
+  <input id="updates_large_{{ item.key }}" class="cart__qty-input quantity" type="number"
+         name="updates[]" value="{{ item.quantity }}" min="1" step="1" pattern="[0-9]*"
+         data-quantity-input data-quantity-item="{{ forloop.index }}" data-quantity-input-desktop data-role="product-quantity-desktop" readonly="">
+  <div onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus cms-btn"></div>
 </div>
 
 <!--Tag for Min 2-->
+{% elsif item.product.tags contains "min2" %}
 <div class="number-input">
-   <div onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="cms-btn"></div>
-   {% elsif item.product.tags contains "min2" %}
-   <input id="updates_large_{{ item.key }}" class="cart__qty-input quantity" type="number"
-      name="updates[]" value="{{ item.quantity }}" min="2" step="1" pattern="[0-9]*"
-      data-quantity-input data-quantity-item="{{ forloop.index }}" data-quantity-input-desktop data-role="product-quantity-desktop" readonly="">
-   <div onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus cms-btn"></div>
+  <div onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="cms-btn"></div>
+  <input id="updates_large_{{ item.key }}" class="cart__qty-input quantity" type="number"
+         name="updates[]" value="{{ item.quantity }}" min="2" step="1" pattern="[0-9]*"
+         data-quantity-input data-quantity-item="{{ forloop.index }}" data-quantity-input-desktop data-role="product-quantity-desktop" readonly="">
+  <div onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus cms-btn"></div>
 </div>
 {% endif %}
+<!-- cart desktop -->
